@@ -1,3 +1,5 @@
-<p>skills works!</p>
-
-<p>{{skillsService.accesoSkills}}</p>
+<ul *ngFor= "let job of skills;">
+	<li>
+		{{job.skill}} - <i> {{job.percentage}}%</i>
+	</li>
+</ul>
