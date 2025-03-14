@@ -1,4 +1,7 @@
-<p>certificates works!</p>
-<p>
-{{certificatesService.accesoCertificates}}
-</p>
+<ul *ngFor="let certi of certificates;">
+	<li>
+	  <b> {{certi.titulo}} <i> ({{certi.ano}})</i></b><br>
+	  <i>  {{certi.descripcion}}</i>
+	</li>
+
+</ul>
