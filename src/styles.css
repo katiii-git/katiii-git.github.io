@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffaf0; /* fondo crema suave */
+  margin: 0;
+  padding: 2rem;
+  color: #4b3e2f;
+  display: flex;
+  justify-content: center;
+}
+
+table {
+  width: 80%;
+  max-width: 900px;
+  border-collapse: collapse;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 174, 100, 0.15);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+td {
+  border: 1px solid #f0d9b5;
+  padding: 1.5rem;
+  vertical-align: top;
+  background-color: #ffe5b4;
+}
+
+tr:first-child td {
+  background-color: #ffddaa;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+  border: none;
+}
+
+app-header,
+app-work-experience,
+app-skills,
+app-education,
+app-certificates,
+app-languages,
+app-interests {
+  display: block;
+  padding: 0.5rem;
+  background-color: #fff2dc;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(255, 200, 120, 0.1);
+}
+
+@media (max-width: 768px) {
+  table {
+    width: 95%;
+  }
+
+  table, tr, td {
+    display: block;
+    width: 100%;
+  }
+
+  td {
+    margin-bottom: 1rem;
+  }
+}
+
