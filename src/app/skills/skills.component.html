@@ -1,5 +1,11 @@
+<h2 class="section-title">
+<i class="fas fa-code"></i> Skills
+</h2>
 <ul *ngFor= "let job of skills;">
 	<li>
 		{{job.skill}} - <i> {{job.percentage}}%</i>
-	</li>
+        <div class="progress-bar">
+          <div class="progress" [ngStyle]="{'width': job.percentage + '%'}"></div>
+        </div>
+    </li>
 </ul>
