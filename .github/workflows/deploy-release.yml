@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "deploy-release"]
   #pull_request:
-    #branches: [ "deploy-release"]
+   # branches: [ "deploy-release"]
 jobs:
   ci_cd_deploy_release:
     runs-on: ubuntu-latest
@@ -11,13 +11,17 @@ jobs:
       # Give the default GITHUB_TOKEN write permission to commit and push the
       # added or changed files to the repository.
       contents: write
+
     steps:
+      - run: ls -la
       - uses: actions/checkout@v2
-      - run: echo ‘hello world’
+      - run: ls -la
+      - run: echo 'hello world'
       - name: Use Node.js 20.x
         uses: actions/setup-node@v1
         with:
           node-version: 20.x
+
       - name: install dependencies 
         run: npm ci
 
@@ -27,9 +31,12 @@ jobs:
       - name: list dir
         run: ls -la dist/mycv/browser
 
-
-      - name: copy index.html, css, js
-        run: cp dist/mycv/browser/*.* docs
+      - name: copy all built files (including subdirectories)
+        run: |
+          mkdir -p docs
+          cp -r dist/mycv/browser/* docs/
+#      - name: copy index.html, css, js
+ #       run: cp dist/mycv/browser/. docs
 
       - name: list docs
         run: ls -la docs
@@ -37,13 +44,10 @@ jobs:
       - name: GIT commit and push docs
         env: 
          CI_COMMIT_MESSAGE: save spark results
-         CI_COMMIT_AUTHOR: adsoft 
-        run: |
-         git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
-         git config --global user.email "adsoft@live.com.mx"
-         git add docs
+         CI_COMMIT_AUTHOR: katiii-git
+        run: | 
+         git config --global user.name "Katia"
+         git config --global user.email "katymartagon@gmail.com"
+         git add .
          git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
          git push
-
-        
-    
