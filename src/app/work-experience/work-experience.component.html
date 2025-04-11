@@ -1,9 +1,14 @@
+<h2 class="section-title"><i class="fas fa-briefcase"></i> Work Experience</h2>
 <ul *ngFor="let job of workExperience;">
-	<li>
-	  {{ job.startDate }} - {{ job.endDate }} <i>{{job.location}} </i> <br>
-	  <b>{{ job.position }}</b><br>
-	  {{ job.company }}<br>
-	  Logros:<br> 
-	  {{ job.accomplishment }}<br>
-	</li>
+  <li>
+    <div>
+        <span>{{ job.startDate }} - {{ job.endDate }}</span><br>
+      <i>{{ job.location }}</i>
+    </div>
+    <div><b>{{ job.position }}</b></div>
+    <div>{{ job.company }}</div>
+    <div><strong>Logros:</strong></div>
+    <div>{{ job.accomplishment }}</div>
+  </li>
 </ul>
+
