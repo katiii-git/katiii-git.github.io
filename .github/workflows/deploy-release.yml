@@ -49,5 +49,5 @@ jobs:
          git config --global user.name "Katia"
          git config --global user.email "katia@gmail.com"
          git add .
-         git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+         git commit -m "${{ env.CI_COMMIT_MESSAGE }}"  git commit -m "Auto-commit changes" || true
          git push
