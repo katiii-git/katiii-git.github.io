@@ -33,7 +33,7 @@ jobs:
 
 
       - name: copy index.html, css, js
-        run: cp dist/mycv/browser/. docs
+        run: cp -r dist/mycv/browser/. docs
 
       - name: list docs
         run: ls -la docs
@@ -45,6 +45,7 @@ jobs:
         run: |
          git config --global user.name "${{ env.CI_COMMIT_AUTHOR }}"
          git config --global user.email "katia@live.com.mx"
+
          git add .
-         git commit -m "${{ env.CI_COMMIT_MESSAGE }}"
+         git commit -m "${{ env.CI_COMMIT_MESSAGE }}"  git commit -m "Auto-commit changes" || true
          git push
