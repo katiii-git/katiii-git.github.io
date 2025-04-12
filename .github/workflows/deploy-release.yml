@@ -33,7 +33,7 @@ jobs:
 
 
       - name: copy index.html, css, js
-        run: cp dist/mycv/browser/. docs
+        run: cp -r dist/mycv/browser/. docs
 
       - name: list docs
         run: ls -la docs
